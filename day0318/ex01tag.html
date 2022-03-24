@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>예제1</title>
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=IBM+Plex+Serif:wght@300&family=Jua&family=Noto+Serif+KR:wght@200&family=PT+Serif&display=swap" rel="stylesheet">
+    <style>
+        /*css영역입니다.*/
+        div.a{
+            font-size: 2em;/*상위태그의 2배*/
+            font-family: Jua;
+            text-shadow: 5px 5px 5px grey;
+        }
+        b.a{
+            background-color: cadetblue;
+            font-family: 'PT Serif';
+        }
+        .b{
+            font-size: 20px;
+            border: 5px solid red;
+            background-color: lightcyan;
+            font-family: 'Do Hyeon';
+        }
+        div.c{
+            font-family:'Noto Serif KR';
+            font-size: 3em;
+            width: 300px;
+            height: 100px;
+            border: 2px solid orange;
+            /*한 줄일 경우 정가운데에 보내기*/
+            line-height: 100px;/*세로 가운데, height와 같은 값을 준다.*/
+            text-align: center;/*가로 가운데*/
+            margin-bottom: 30px;/*요소 아래의 바깥 여백*/
+            box-shadow: 5px 5px 7px pink;
+            text-shadow: 2px 2px 10px rgb(255, 196, 0);
+        }
+        .img1{
+            /* position: relative;relative 현재위치를 기준으로 이동 */
+            position: absolute;/*절대좌표(왼쪽 상단(0,0)*/
+            /*position: static;*/
+            left: 400px;
+            top: 100px;
+        }
+        img.img2{
+            position: relative;
+            left: 600px;
+            top: 200px;
+            width: 200px; 
+            border: 5px groove gold;
+            box-shadow: 5px 4px 19px;
+        }
+    </style>
+</head>
+<body>
+    <font size="s" color="cyan">Font Tag Test</font><br>
+    <b style="font-style: 20px; color: magenta;">Have a Nice Day!!</b><br>
+    <b class="a">Happy day</b><br><br>
+    <b class="b">재미있는 자바스크립트</b><br>
+    <div class="a">안녕하세요div</div>
+    <div class="b">반가워요div</div>
+    <div class="c" title="뭘봐">반가워요div</div>
+    <img src="../snoopyAvata/s1.JPG" class="img1" title="개똥이" alt="개똥이 없는 개똥이자리">
+    <img src="../div_img/beauty2.jpg" class="img2" title="내방입니다" alt="내방이 사라졋어">
+</body>
+
+</html>

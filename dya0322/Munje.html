@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Gowun+Dodum&family=Hahmlet:wght@300&family=IBM+Plex+Serif:wght@300&family=Jua&family=Nanum+Gothic+Coding&family=Noto+Serif+KR:wght@200;400&family=PT+Serif&family=Playfair+Display:ital@0;1&family=Poor+Story&family=Ramaraja&family=Red+Hat+Mono:ital@0;1&family=Slabo+27px&display=swap"
+        rel="stylesheet">
+    <title>Document</title>
+    <style>
+        body * {
+
+            font-family: 'Gowun Dodum';
+        }
+
+        body>div {
+            width: 400px;
+            height: 400px;
+            margin-top: 50px;
+            /* border: 2px solid black; */
+            float: left;
+        }
+
+        div.left {
+            text-align: 400px;
+        }
+        div.right{
+            border: 2px solid gray;
+        }
+
+        div.left_input {
+            line-height: 35px;
+            margin: 20px 0px;
+            text-align: center;
+            font-size: 20px;
+            /* border-bottom: 1px soslid black; */
+            /* font-family: 'Gowun Dodum'; */
+        }
+        .txt{
+            border-bottom: 1px solid gray;
+            border-top: 0px;
+            border-left: 0;
+            border-right: 0;
+            font-size: 18px;
+        }
+
+        #btn {
+            width: 210px;
+            height: 50px;
+            background-color: rgb(245, 243, 143);
+            border: 0px;
+            font-size: 20px;
+        }
+        #btn:hover{
+            box-shadow: 5px 5px 0 gray;
+        }
+
+        div.right_output {
+            line-height: 35px;
+            margin: 20px 0px 10px 50px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="left">
+        <div class="left_input">이름 <input type="text" class="txt" id="txt1" autofocus></div><br>
+        <div class="left_input">자바 <input type="text" class="txt" id="txt2"></div><br>
+        <div class="left_input">HTML <input type="text" class="txt" id="txt3"></div><br>
+        <div class="left_input"><button type="button" id="btn">결&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;과</button>
+        </div>
+    </div>
+    <div class="right">
+        <div class="right_output">이름: <span id="msg1"></span></div>
+        <div class="right_output">자바: <span id="msg2"></span>점</div>
+        <div class="right_output">HTML: <span id="msg3"></span>점</div>
+        <div class="right_output">총점: <span id="msg4"></span>점</div>
+        <div class="right_output">평균: <span id="msg5"></span>점</div>
+    </div>
+    <script>
+        var txtArr = new Array(3);
+        var msgArr = new Array(5);
+        var name = document.getElementById("txt1");
+        var java = document.getElementById("txt2");
+        var html = document.getElementById("txt3");
+        var msg4=document.getElementById("msg4");
+        var msg5=document.getElementById("msg5");
+
+        document.getElementById("btn").onclick = function () {
+            if (name.value == '') {
+                alert("이름을 입력해주세요!");
+                namd.focus();
+                return;
+            }
+            if (java.value == '') {
+                alert("점수를 입력해주세요!");
+                java.focus();
+                return;
+            }
+            if (html.value == '') {
+                alert("점수를 입력해주세요!");
+                html.focus();
+                return;
+            }
+
+            if(isNaN(java.value)){
+                alert("점수는 숫자로만 입력해주세요.");
+                java.value="";
+                java.focus();
+                return;
+            }
+            if(isNaN(html.value)){
+                alert("점수는 숫자로만 입력해주세요.");
+                html.value="";
+                html.focus();
+                return;
+            }
+
+            for (i = 1; i <= 3; i++) {
+                var tmp = "txt" + i;
+                txtArr[i-1] = document.getElementById(tmp);
+                // console.log(txtArr[i]);
+            }
+
+            for(i=1; i<=3; i++){
+                var tmp="msg"+i;
+                msgArr[i-1]=document.getElementById(tmp);
+                msgArr[i-1].innerText=txtArr[i-1].value;
+            }
+            var sum=0;
+            for(i=1;i<3;i++){
+                var p=parseInt(txtArr[i].value);
+                sum+=p;
+                console.log(p);
+            }
+            var avg=sum/2;
+
+            msg4.innerText=sum;
+            msg5.innerText=avg;
+        }
+
+    </script>
+</body>
+
+</html>

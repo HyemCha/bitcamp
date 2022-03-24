@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&family=Sunflower:wght@300&family=Lobster&family=Song+Myung&family=East+Sea+Dokdo&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    <style>
+        div.a ul{
+            list-style: none;
+        }
+        div.a ul li{
+            float: left;
+            font-size: 2em;
+            font-family: 'Song Myung';
+            width: 150px;
+            height: 60px;
+            border: 2px solid black;
+            text-align: center;
+            line-height: 60px;
+            border-radius: 50px;
+            margin-right: 10px;
+            cursor:pointer;
+            background-color: #2e8b57;
+            color: #fff;
+        }
+        div.a ul li:hover{
+            background-color: #ffc0cb;
+            color: black;
+        }
+        div.a ul li:active{
+            background-color: rgb(248, 158, 233);
+            color: gray;
+        }
+
+        div.gun{
+            width: 300px;
+            height: 250px;
+            background-image: url('../jquery_image/gun.png');
+        }
+        div.gun:active{
+            width: 300px;
+            height: 250px;
+            background-image: url('../jquery_image/gun.png');
+            background-position: bottom;
+        }
+    </style>
+</head>
+<body>
+    <div class="a" style="width: 100%;">
+        <ul>
+            <li>Home</li>
+            <li>오시는 길</li>
+            <li>상품목록</li>
+            <li>장바구니</li>
+            <li>내정보</li>
+        </ul>
+    </div>
+    <br style="clear: both;"><!--float:left 속성을 해제-->
+    <h1>총을 클릭해보세요</h1>
+    <div class="gun"></div>
+</body>
+</html>
