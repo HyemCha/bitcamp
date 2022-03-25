@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Gowun+Dodum&family=Hahmlet:wght@300&family=IBM+Plex+Serif:wght@300&family=Jua&family=Nanum+Gothic+Coding&family=Noto+Serif+KR:wght@200;400&family=PT+Serif&family=Playfair+Display:ital@0;1&family=Poor+Story&family=Ramaraja&family=Red+Hat+Mono:ital@0;1&family=Slabo+27px&display=swap"
+        rel="stylesheet">
+    <style>
+        body *{
+            font-size: 1.4em;
+            font-family: 'Jua';
+        }
+        div.left{
+            position: absolute;
+            left: 100px;
+            top: 100px;
+            width: 300px;
+            height: 230px;
+            border: 1px solid black;
+            padding:20px 20px;
+        }
+        div.right{
+            position: absolute;
+            left: 450px;
+            top: 100px;
+            width: 300px;
+            height: 230px;
+            border: 1px solid black;
+            padding:20px 20px;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var out=document.getElementById("right");
+
+            //버튼 이벤트
+            document.getElementById("btn1").onclick=function(){
+                //이름
+                var name=document.getElementById("name");
+                //2과목의 점수
+                var java=document.getElementById("java");
+                var html=document.getElementById("html");
+                //총점
+                var sum=parseInt(java.value)+parseInt(html.value);
+                var sum2=eval(java.value+"+"+html.value);//eval:수식을 쓰면 타입에 관계없이 알아서 계산해줌. 문자열 형태의 수식을 계산해준다.
+                console.log(sum,sum2);
+                var avg=sum/2;
+                var s="이름 : "+name.value+"<br>";
+                 s+="자바점수 : "+java.value+"<br>";
+                 s+="html점수 : "+html.value+"<br>";
+                 s+="총점 : "+sum+"<br>";
+                 s+="평균 : "+avg+"<br>";
+
+                out.innerHTML=s;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="left">
+        <b>이름</b>
+        <input type="text" id="name" style="width:100px;">
+        <br>
+        <b>java</b>
+        <input type="text" id="java" style="width:100px;">
+        <br>
+        <b>html</b>
+        <input type="text" id="html" style="width:100px;">
+        <br>
+        <button type="button" id="btn1">결과</button>
+    </div>
+    <div class="right" id="right">
+        
+    </div>
+</body>
+</html>
