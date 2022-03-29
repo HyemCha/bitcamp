@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Do+Hyeon&family=Gowun+Dodum&family=Hahmlet:wght@300&family=IBM+Plex+Serif:wght@300&family=Jua&family=Nanum+Gothic+Coding&family=Noto+Serif+KR:wght@200;400&family=PT+Serif&family=Playfair+Display:ital@0;1&family=Poor+Story&family=Ramaraja&family=Red+Hat+Mono:ital@0;1&family=Slabo+27px&display=swap"
+        rel="stylesheet">
+    <style>
+        body * {
+            /*최상위태그가 기준, em:상위태그가 기준*/
+            font-family: 'Gowun Dodum'
+        }
+
+        div.bitcamp {
+            position: absolute;
+            left: 300px;
+            width: 250px;
+            height: 300px;
+            border: 2px groove gray;
+            border-radius: 30px;
+            top: 100px;
+        }
+
+        ul li {
+            list-style: none;
+        }
+
+        ul.menu {
+            font-size: 2em;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        ul.submenu>li {
+            font-size: 24px;
+            font-family: 'Hahmlet:wght@300';
+        }
+
+        ul.submenu>li:hover {
+            background-color: #ccc;
+            color: yellow;
+            width: 120px;
+        }
+    </style>
+    <script>
+        $(function () {
+            //서브메뉴 숨기기
+            $("ul.submenu").hide();
+
+            //문제:이벤트
+            // 메뉴명을 클릭시 해당 메뉴의 서브메뉴는 나타나도록하고 다른 서브메뉴들 숨김
+            $(".menu>li").click(function () {
+                // $(this).find("ul.submenu").show('slow');
+                // $(this).siblings().find("ul.submenu").hide('slow');
+
+                $(this).find("ul.submenu").slideDown('slow');
+                $(this).siblings().find("ul.submenu").slideUp('slow');
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="bitcamp">
+        <ul class="menu">
+            <!--첫번째 메뉴-->
+            <li>File
+                <ul class="submenu">
+                    <li>New</li>
+                    <li>Open File</li>
+                    <li>Save</li>
+                    <li>Rename</li>
+                </ul>
+            </li>
+            <!--두번째 메뉴-->
+            <li>Edit
+                <ul class="submenu">
+                    <li>Cut</li>
+                    <li>Copy</li>
+                    <li>Paste</li>
+                    <li>Delete</li>
+                </ul>
+            </li>
+            <!--세번째 메뉴-->
+            <li>Help
+                <ul class="submenu">
+                    <li>오시는 길</li>
+                    <li>검색</li>
+                    <li>마켓</li>
+                    <li>설명서</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+</body>
+
+</html>

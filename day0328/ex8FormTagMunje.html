@@ -21,8 +21,7 @@
             border-collapse: collapse;
         }
 
-        td,
-        th {
+        td,th {
             border: 1px solid gray;
         }
 
@@ -84,6 +83,8 @@
                     });
                 }
                 $("div.img").html(s);
+
+                console.log(s);
             });
         });
     </script>
@@ -92,7 +93,7 @@
 <body>
     <table>
         <tr>
-            <td width="100">글자색</td>
+            <th width="100">글자색</th>
             <td>
                 <input type="radio" name="tcolor" value="red">빨강&nbsp;
                 <input type="radio" name="tcolor" value="blue">파랑&nbsp;
@@ -103,7 +104,7 @@
             </td>
         </tr>
         <tr>
-            <td>글&nbsp;&nbsp;&nbsp;꼴</td>
+            <th>글&nbsp;&nbsp;&nbsp;꼴</th>
             <td>
                 <select name="font" id="font">
                     <option value="Gowun Dodum" selected>Gowun Dodum</option>
@@ -116,18 +117,18 @@
             </td>
         </tr>
         <tr>
-            <td>스타일</td>
+            <th>스타일</th>
             <td>
                 <input type="checkbox" name="fstyle" id="bold" value="bold">굵게
                 <input type="checkbox" name="fstyle" id="italic" value="italic">이태릭
             </td>
         </tr>
         <tr>
-            <td>이미지</td>
+            <th>이미지</th>
             <td>
                 <input type="checkbox" name="image" value="../img/ani04.gif">인형1
-                <input type="checkbox" name="image" value="../img/chr03.gif">인형2
-                <input type="checkbox" name="image" value="../img/chr16.gif">인형3
+                <input type="checkbox" name="image" value="../img/ani03.gif">인형2
+                <input type="checkbox" name="image" value="../img/ani08.gif">인형3
             </td>
         </tr>
         <tr>

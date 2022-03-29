@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Do+Hyeon&family=Gowun+Dodum&family=Hahmlet:wght@300&family=IBM+Plex+Serif:wght@300&family=Jua&family=Nanum+Gothic+Coding&family=Noto+Serif+KR:wght@200;400&family=PT+Serif&family=Playfair+Display:ital@0;1&family=Poor+Story&family=Ramaraja&family=Red+Hat+Mono:ital@0;1&family=Slabo+27px&display=swap"
+        rel="stylesheet">
+    <style>
+        div.box{
+            border: 5px solid tomato;
+            margin-top: 20px;
+            width: 300px;
+            height: 80px;
+            padding: 20px 20px;
+            font-family: 'Jua';
+            font-size: 1.3em;
+        }
+    </style>
+</head>
+<body>
+    <h3>배열 반복시 사용하는 $.each문</h3>
+    <script>
+        var data1=["red","green","tomato","magenta","gray","orange"];
+        $.each(data1,function(idx,item){
+            var s="<h2 style='color:"+item+"'>"+item+"</h2>";
+            document.write(s);
+        });
+    </script>
+    <h3>위의 배열을 for문을 이용해서 같은 모양으로 나오게 하기</h3>
+    <script>
+        for(i=0;i<data1.length;i++){
+            var s="<h2 style='color:"+data1[i]+"'>"+data1[i]+"</h2>";
+            document.write(s);
+        }
+    </script>
+    <hr>
+    <div id="show"></div>
+
+    <script>
+        var info=[
+            {name:"이영자", hp:"010-2222-3333", addr:"서울시"},
+            {name:"재민", hp:"010-1234-3233", addr:"경기도"},
+            {name:"지성", hp:"010-2267-3773", addr:"부산시"}
+        ]; //json형태(key:value)
+
+        var s="";
+        $.each(info,function(idx,data){
+            s+="<div class='box'>";
+            s+="이름:"+data.name+"("+(idx+1)+"번)<br>";
+            s+="핸드폰:"+data.hp+"<br>";
+            s+="주소:"+data.addr+"</div>";
+        });
+        $("#show").html(s);
+    </script>
+</body>
+</html>
