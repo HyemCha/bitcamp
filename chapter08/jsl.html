@@ -14,11 +14,22 @@
             border: 0;
         }
     </style>
+    <script>
+        window.onload=function(){
+            document.getElementById("btn").onclick=function(){
+                alert('방법2');
+            }
+        }
+    </script>
 </head>
 <body>
     <p>
         자바 스크립트는 이벤트에 반응할 수 있습니다.
     </p>
-    <button type="button" onclick="alert('반갑습니다!')">버튼을 누르세요</button>
+    <button type="button" onclick="alert('반갑습니다!')">버튼을 누르세요1</button>
+    <button type="button" id="btn">버튼을 누르세요2</button>
+    <script>
+        document.write("hello");
+    </script>
 </body>
 </html>
