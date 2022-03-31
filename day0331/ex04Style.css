@@ -10,16 +10,15 @@ body{
     background-size: cover;
 }
 
-.sunban-wrapper{
-    width: 780px;
-    margin: 50px auto;
-
-}
-
 #control-wrapper{
     width: 300px;
     height: 420px;
     position: fixed; left: 0; bottom: 0;
+}
+
+.sunban-wrapper{
+    width: 780px;
+    margin: 50px auto;
 }
 
 .sunban{

@@ -29,6 +29,7 @@ $(function(){
                 // $(this).hide();//hide는 자리차지x
                 $(this).css("opacity","0");//투명도 0, 자리를 차지함
                 n=0;
+                console.log("n"+n);
                 $(".sunban li img").show();
                 $("#msg").html("");
             });
