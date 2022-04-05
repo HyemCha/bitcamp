@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Lobstar&family=Do+Hyeon&family=Gowun+Dodum&family=Hahmlet:wght@300&family=IBM+Plex+Serif:wght@300&family=Jua&family=Nanum+Gothic+Coding&family=Noto+Serif+KR:wght@200;400&family=PT+Serif&family=Playfair+Display:ital@0;1&family=Poor+Story&family=Ramaraja&family=Red+Hat+Mono:ital@0;1&family=Slabo+27px&display=swap" rel="stylesheet">
+    <style>
+        body *{
+            font-family: 'Jua';
+        }
+        div.buttons{
+            position: relative;
+            left: 200px;
+            top: 50px;
+        }
+        div.buttons button{
+            width: 130px;
+        }
+        div.inputform, div.list{
+            position: absolute;
+            left: 150px;
+            top: 150px;
+        }
+    </style>
+    <script>
+        $(function(){
+            
+            $("div.list").hide();
+
+            $("#btninpshow").click(function(){
+
+                $("div.inputform").show();
+                $("div.list").hide();
+            });
+            $("#btnlistshow").click(function(){
+                var s="<table class='table table-bordered' style='width: 500px;'>";
+                s+="<tr bgcolor='pink'><th width='50'>번호</th><th width='100'>이름</th><th width='60'>성별</th><th>주소</th><th width='50'>편집</th></tr>";
+                // for (i=0;i<arr.length;i++){
+                //     s+="<tr><td>"+(i+1)+"</td><td>"+arr[i].name+"</td><td>"+arr[i].age+"</td><td>"+arr[i].addr+"</td></tr>";
+                // }
+                if(arr.length==0){
+                    s+="<tr><td colspan=5 align=center>저장된 데이터가 없습니다</td></tr>";
+                }
+                else{
+                $.each(arr,function(index,item){
+                s+="<tr><td>"+(index+1)+"</td><td>"+item.name+"</td><td>"+item.age+"</td><td>"+item.addr+"</td>";
+                s+="<td>"+"<span class='glyphicon glyphicon-edit'></span>&nbsp;";
+                s+="<span class='glyphicon glyphicon-trash'></span></td>";
+                });
+                }
+                s+="</table>";
+                $("div.list").html(s);
+
+                $("div.inputform").hide();
+                $("div.list").show();
+            });
+
+            //배열
+            var arr =new Array();
+            var cnt=0
+            //객체
+            $("#btnsave").click(function(){
+                myname=$("#txtname").val();
+                myage=$("#txtage").val();
+                myaddr=$("#txtaddress").val();
+
+                var ob=new Object({
+                    name:myname,
+                    age:myage,
+                    addr:myaddr
+                });
+                arr.push(ob);
+                console.log(arr);
+               
+                $("#txtname").val("");
+                $("#txtage").val("");
+                $("#txtaddress").val("");
+
+                $("#txtname").focus();
+
+                $("h1.info b").text("현재 "+(arr.length)+"명의 데이터가 배열에 저장되었습니다.");
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <div class="buttons">
+        <button type="button" class="btn btn-info" id="btninpshow">
+            <span class="glyphicon glyphicon-pencil"></span> 데이터 추가폼</button>
+        <button type="button" class="btn btn-danger" id="btnlistshow"><span class="glyphicon glyphicon-th-list"></span>&nbsp;데이터 목록</button>
+    </div>
+    <div class="inputform">
+        <table class="table table-bordered" style="width: 300px;">
+            <tr>
+                <th style="width: 100px; background-color:#fcc;">이름</th>
+                <td>
+                    <input type="text" id="txtname" class="form-control input-sm" placeholder="input name">
+                </td>
+            </tr>
+            <tr>
+                <th style="width: 100px; background-color:#fcc;">성별</th>
+                <td>
+                    <input type="text" id="txtage" class="form-control input-sm" placeholder="input age">
+                </td>
+            </tr>
+            <tr>
+                <th style="width: 100px; background-color:#fcc;">주소</th>
+                <td>
+                    <input type="text" id="txtaddress" class="form-control input-sm" placeholder="input address">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <button type="button" class="btn btn-default" id="btnsave"><span class="glyphicon glyphicon-ok"></span> 배열에 저장</button>
+                </td>
+            </tr>
+        </table>
+        <h1 class="info"><b></b></h1>
+    </div>
+    <div class="list">출력</div>
+</body>
+</html>
