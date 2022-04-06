@@ -11,7 +11,7 @@ class UserException extends Exception{
 
 public class Ex11UserException {
 	
-	public static void writeContent(String msg) throws UserException{ //throws; 예외 발생하면 호출한 곳으로 예외객체(new UserException("고운말을 씁시다!")) 보냄
+	public static void writeContent(String msg) throws UserException{ //throws; 예외 발생하면 호출한 곳으로 예외객체() 보냄
 		if(msg.contains("바보")||msg.contains("멍청"))
 			throw new UserException("고운말을 씁시다!"); //throw:강제로 예외발생 시킴. 호출한 곳으로 예외객체를 보냄.
 			//throw로 UserException이라는 예외를 강제로 발생시킴.->위의 메서드를 사용하는 쪽에서는 이에 대한 처리를 하도록 강요
