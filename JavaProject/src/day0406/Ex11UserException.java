@@ -28,10 +28,12 @@ public class Ex11UserException {
 			String msg=s.nextLine();
 			if(msg.equalsIgnoreCase("q")) //입력받은 문장이 q이면 while문 종료
 				break;
+			//에러를 던지지 않고 내부적으로 해결하려면 try/catch를 통해 해결
+			//main메서드에 throw를 쓰면 main메서드는 종료되어 프로그램 전체가 종료됨
 			try { 
 				//입력받은 문장을 writeContent() 메서드 호출 및 문장 전달 
 				//예외가 발생하면 함수에서 예외 객체를 양도받아 catch에 예외객체 전달
-				writeContent(msg); //던져진 예외가 있다면 catch 블록에서 받음
+				writeContent(msg); //throw로 인해 던져진 예외가 있다면 catch 블록에서 받음
 			}catch(UserException e) {
 				System.out.println("오류메세지:"+e.getMessage());
 			}
