@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Do+Hyeon&family=Gowun+Dodum&family=Hahmlet:wght@300&family=IBM+Plex+Serif:wght@300&family=Jua&family=Nanum+Gothic+Coding&family=Noto+Serif+KR:wght@200;400&family=PT+Serif&family=Playfair+Display:ital@0;1&family=Poor+Story&family=Ramaraja&family=Red+Hat+Mono:ital@0;1&family=Slabo+27px&display=swap"
+        rel="stylesheet">
+    <style>
+        div.box1 {
+            width: 100%;
+            float: left;
+            font-family: 'Gowun Dodum';
+        }
+
+        div.a {
+            width: 250px;
+            height: 140px;
+            border: 0;
+            float: left;
+            margin: 30px 0 0 30px;
+        }
+        div#dcheck2{
+            border: 1px solid gray;
+        }
+
+        div.box2 {
+            width: 400px;
+            height: 200px;
+            border: 1px solid gray;
+            float: left;
+            margin-top: 100px;
+            margin-left: 100px;
+            text-align: center;
+            padding: auto;
+        }
+
+        p {
+            /* margin: 15px 10px; */
+            padding-left: 10px;
+        }
+
+        p:hover {
+            background-color: gainsboro;
+            color: aliceblue;
+        }
+        button{
+            width: 150px;
+            height: 50px;
+            background-color: rgb(245, 197, 188);
+            border: 0;
+            margin-bottom: 3px;
+            font-family: 'Gowun Dodum';
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">
+        <div class="a" id="dbook">
+            <button type="button" id="book">영화 예매</button>
+        </div>
+        <div class="a" id="dcheck"></div>
+        <div class="a" id="dcheck2"></div>
+    </div>
+    <br>
+    <div class="box2"></div>
+
+    <script>
+        $("#book").click(function () {
+            var s = "";
+            s += "<button type='button' id='theaterck'>극장 선택</button><br>";
+            s += "<button type='button' id='movieck'>영화 선택</button>";
+            $("#dcheck").append(s)
+        });
+        $(document).on("click", "#theaterck", function () {
+            var s = "";
+            s += "<p class='theater'>CGV 강남역점</p>";
+            s += "<p class='theater'>MEGABOX 강남점</p>";
+            s += "<p class='theater'>CGV 교보타워점</p>";
+            $("#dcheck2").html(s);
+
+            // var theater="";
+            // $(document).on("click", ".theater", function () {
+            //     theater = "영화관 : " + $(this).html()+"<br>";
+            //     $(".box2").append(theater);
+            // });
+        });
+        $(document).on("click", "#movieck", function () {
+            var s = "";
+            s += "<p class='movie'>바람과 함께 사라지다</p>";
+            s += "<p class='movie'>작은 아씨들</p>";
+            s += "<p class='movie'>신비한 동물사전</p>";
+            $("#dcheck2").html(s);
+
+            // var movie="";
+            // $(document).on("click", ".movie", function () {
+            //     movie = "영화제목 : " + $(this).html();
+            //     $(".box2").append(movie);
+            // });
+        });
+
+        var theater="",movie="";
+        $(document).on("click","#dcheck2 p",function(){
+            var c=$(this).attr("class");
+            if(c=="theater")
+                theater="극장명 : "+$(this).text();
+            else
+                movie="영화제목 : "+$(this).text();
+            $(".box2").html(theater+"<br>"+movie);
+        });
+
+    </script>
+</body>
+
+</html>

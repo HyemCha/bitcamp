@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Do+Hyeon&family=Gowun+Dodum&family=Hahmlet:wght@300&family=IBM+Plex+Serif:wght@300&family=Jua&family=Nanum+Gothic+Coding&family=Noto+Serif+KR:wght@200;400&family=PT+Serif&family=Playfair+Display:ital@0;1&family=Poor+Story&family=Ramaraja&family=Red+Hat+Mono:ital@0;1&family=Slabo+27px&display=swap"
+        rel="stylesheet">
+    <style>
+        div.top{
+            width: 100%;
+            height: 300px;
+            float: left;
+        }
+        div.dbox{
+            width: 150px;
+            height: 150px;
+            margin: 30px 0 0 30px;
+            border: 1px solid gray;
+            float: left;
+        }
+        div.bottom{
+            width: 500px;
+            height: 300px;
+            float: left;
+            margin: 30px;
+            border: 1px solid gray;
+
+        }
+        p.theater:hover{
+            background-color: pink;
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        $(function(){
+            $("#first").html("<button type='button' id='f'>영화예매</button>");
+            $("#first").click(function(){
+                var s="<button type='button' id='btn1'>영화관 선택</button><br>";
+                s+="<button type='button' id='btn2'>영화 선택</button>";
+                $("#second").html(s);
+            });
+
+            $(document).on("click","#btn1",function(){
+                var t="<p class='theater'>동탄점</p>";
+                t+="<p class='theater'>강남역점</p>";
+                t+="<p class='theater'>서울역점</p>";
+                $("#third").html(t);
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="top">
+        <div class="dbox" id="first"></div>
+        <div class="dbox" id="second"></div>
+        <div class="dbox" id="third"></div>
+        <div class="dbox" id="fourth"></div>
+    </div>
+    <div class="bottom"></div>
+</body>
+</html>

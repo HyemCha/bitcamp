@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Do+Hyeon&family=Gowun+Dodum&family=Hahmlet:wght@300&family=IBM+Plex+Serif:wght@300&family=Jua&family=Nanum+Gothic+Coding&family=Noto+Serif+KR:wght@200;400&family=PT+Serif&family=Playfair+Display:ital@0;1&family=Poor+Story&family=Ramaraja&family=Red+Hat+Mono:ital@0;1&family=Slabo+27px&display=swap"
+        rel="stylesheet">
+</head>
+<body>
+    <h2 style="color:blue;">Start:</h2>
+    <h2 style="color:pink;">Start:</h2>
+    <h2 style="color:green;">Start:</h2>
+
+    <script>
+        $("h2").click(function(){
+            //클릭 할 때 마다 별 추가
+            $(this).append("★");
+        });
+
+        //1초 단위로 마지막 h2를 클릭한 효과
+        // setInterval(function(){
+        //     $("h2:last").trigger("click");//trigger() : 이벤트 강제 발생시키는 함수
+        // },1000);
+    </script>
+    <hr>
+    <input type="file" id="file" style="visibility: hidden;">
+    <span id="camera" class="glyphicon glyphicon-camera" style="font-size: 3em; cursor: pointer;"></span>
+    <script>
+        //카메라를 클릭시 파일이 열리도록 해보자(trigger이용)
+        $("#camera").click(function(){
+            $("#file").trigger("click");
+        });
+    </script>
+</body>
+</html>

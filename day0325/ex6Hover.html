@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Do+Hyeon&family=Gowun+Dodum&family=Hahmlet:wght@300&family=IBM+Plex+Serif:wght@300&family=Jua&family=Nanum+Gothic+Coding&family=Noto+Serif+KR:wght@200;400&family=PT+Serif&family=Playfair+Display:ital@0;1&family=Poor+Story&family=Ramaraja&family=Red+Hat+Mono:ital@0;1&family=Slabo+27px&display=swap"
+        rel="stylesheet">
+    <style>
+        body * {
+            font-size: 1.2rem;
+            /*최상위태그가 기준, em:상위태그가 기준*/
+            font-family: 'Jua';
+        }
+
+        .selected {
+            border: 5px solid pink;
+            box-shadow: 5px 5px 5px gray;
+        }
+
+        .photo{
+            position: absolute;
+            left: 400px;
+            top: 200px;
+        }
+    </style>
+    <script>
+        $(function () {
+            $("div.a").css({
+                "float": "left",
+                "margin-right": "5px"
+            });
+            $("div.a>img").css({
+                "width": "70px",
+                "height": "70px",
+                "border": "1px solid black"
+            })
+
+            //when hover(mouseover&mousout)
+            $("div.a>img").hover(function () {
+                //get src from current image (var:myimg)
+                var myimg=$(this).attr("src");
+                //add 'selected' class into current image
+                $(this).addClass("selected");
+                //적용하기 myimage to div.photo>image
+                $("div.photo>img").attr("src",myimg);
+
+                //이벤트가 발생한 이미지의 다음 태그가 h3태그임-거기서 text얻기
+                //text() <-javascript의 innerText와 같음 (innerHTML()=innerHTML)
+                var title=$(this).next().text();
+                //h2.title에 text로 넣기
+                $("h2.title").text(title);
+            },function(){
+                //div.photo>img의 이미지를 원 이미지로 변경
+                $("div.photo>img").attr("src","../img/btn01.gif");
+                //selected class 제거
+                $(this).removeClass("selected");
+
+                //h2.title 제목을 원래대로
+                $("h2.title").text("제목");
+            });
+        })
+    </script>
+</head>
+
+<body>
+    <div class="photos">
+        <script>
+            var s = "";
+            for (i = 1; i <= 10; i++) {
+                s = "<div class='a'>";
+                var iname = "chr" + (i < 10 ? "0" : "") + i + ".gif";
+                s += "<img src='../img/" + iname + "'>";
+                s += "<h3>캐릭터 " + i + "</h3>";
+                s += "</div>";
+                document.write(s);
+            }
+        </script>
+    </div>
+
+    <div class="photo">
+        <img src="../img/btn01.gif" class="photo">
+        <h2 class="title">제목</h2>
+    </div>
+</body>
+
+</html>

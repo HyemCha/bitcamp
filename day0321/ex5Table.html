@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table.a{
+            border-collapse: collapse;/*collapse : border 사이의 간격이 0*/
+        }
+        table.b{
+            width: 400px;
+            border: 5px inset gray;
+            border-collapse: collapse;
+        }
+        table.b td, table.b th{
+            border: 1px solid green;
+        }
+        table.b tr{
+            height: 40px;
+        }
+        td.bg{
+            background-image: url('../img/ani15.gif');
+            background-size: 50px 100px;
+            background-repeat: repeat;
+            background-position: right bottom;
+        }
+        body{
+            background: url('../img/bg01.gif');
+        }
+    </style>
+</head>
+<body>
+    <table class="a" border="1" style="width: 400px;">
+        <caption><b>표 1</b></caption>
+        <tr height="50" bgcolor="orange">
+            <td>1번</td>
+            <td align="right" valign="top">2번</td>
+            <td align="center" valign="bottom">3번</td>
+            <td rowspan="2" bgcolor="skyblue">6번</td>
+        </tr>
+        <tr height="50">
+            <td colspan="2" bgcolor="gray">4번</td>
+            <td bgcolor="pink">5번</td>
+        </tr>
+    </table>
+
+    <table class="b">
+        <caption><b>표2</b></caption>
+        <tr>
+            <th bgcolor="pink">이름</th><!--th는 가운데 정렬, 굵게 속성이 추가됨-->
+            <td>박보영</td>
+            <th bgcolor="#ffc">나이</th>
+            <td>23세</td>
+        </tr>
+        <tr>
+            <th bgcolor="orange">주소</th><!--th는 가운데 정렬, 굵게 속성이 추가됨-->
+            <td colspan="3">서울시 강남구 역삼동 123번지</td>
+        </tr>
+        <tr style="height:200px"><!--속성으로 높이 주면 style sheet의 것이 우선으로 적용됨-->
+            <th>사진</th>
+            <td colspan="3" class="bg">
+                <img src="../연예인사진 (2)/14.jpg" width="100">
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

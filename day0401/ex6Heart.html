@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Lobstar&family=Do+Hyeon&family=Gowun+Dodum&family=Hahmlet:wght@300&family=IBM+Plex+Serif:wght@300&family=Jua&family=Nanum+Gothic+Coding&family=Noto+Serif+KR:wght@200;400&family=PT+Serif&family=Playfair+Display:ital@0;1&family=Poor+Story&family=Ramaraja&family=Red+Hat+Mono:ital@0;1&family=Slabo+27px&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* .glyphicon glyphicon-heart{} */
+        .glyphicon {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<!-- <script>
+    // $("#ht2").hide();
+    $(".glyphicon").click(function(){
+        var c=$(this).attr("id");
+        if(c=="ht1"){
+            $("")
+        }
+    });
+</script> -->
+
+<body>
+    <span id="ht1" class="glyphicon glyphicon-heart-empty heart" style="font-size: 40px; cursor: pointer;"></span>
+    <!-- <span id="ht2" class="glyphicon glyphicon-heart"
+        style="font-size: 3em; cursor: pointer; color: red; display: none;"></span> -->
+    
+    <script>
+        $("span.heart").click(function(){
+            $(this).animate({"font-size":"60px"},"slow",function(){
+                $(this).css("color","red");
+                $(this).animate({"font-size":"40px"},'slow');
+
+                $(this).attr("class","glyphicon glyphicon-heart");
+            });
+        });
+    </script>
+</body>
+
+</html>

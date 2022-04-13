@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Do+Hyeon&family=Gowun+Dodum&family=Hahmlet:wght@300&family=IBM+Plex+Serif:wght@300&family=Jua&family=Nanum+Gothic+Coding&family=Noto+Serif+KR:wght@200;400&family=PT+Serif&family=Playfair+Display:ital@0;1&family=Poor+Story&family=Ramaraja&family=Red+Hat+Mono:ital@0;1&family=Slabo+27px&display=swap"
+        rel="stylesheet">
+    <style>
+        div.wall{
+            position: absolute;
+            width: 200px;
+            height: 500px;
+            background-image: url('../jquery_image/bg2.png');
+            z-index: 2;
+        }
+        #img1{
+            position: absolute;
+            left: 140px;
+            top: 100px;
+            width: 150px;
+            height: 200px;
+            z-index: 1;
+        }
+    </style>
+    <script>
+        $(function(){
+            $("#img1").click(function(){
+                $(this).animate({"width":"0px"},'slow',function() {
+                    $(this).animate({"width":"150px"},'slow');
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="wall"></div>
+    <img src="../jquery_image/03.png" id="img1">
+</body>
+</html>
